@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  php:
+    image: 'caligari/php-wordpress:7.2-apache'
+    build: './build'
+    restart: 'always'
+    env_file:
+      - './php.env'
+    volumes:
+      - './www:/var/www/html'
+
+  mariadb:
+    image: 'mariadb:10.3'
+    restart: 'always'
+    env_file:
+      - './mariadb.env'
+    volumes:
+      - './database:/var/lib/mysql'
+
