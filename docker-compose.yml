@@ -3,7 +3,7 @@ version: '3'
 services:
 
   php:
-    image: 'caligari/php-wordpress:7.2-apache'
+    image: 'caligari/wordpress-lamp:7.2'
     build: './build'
     restart: 'always'
     env_file:
